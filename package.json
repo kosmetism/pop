@@ -1,0 +1,41 @@
+{
+  "name": "blogsounds",
+  "version": "0.0.0",
+  "description": "Top SoundCloud tracks from web blogs by genres.",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "watchify . -o build/bundle.js -v -d",
+    "build": "NODE_ENV=production browserify . | uglifyjs -cm > build/bundle.min.js"
+  },
+  "browserify": {
+    "transform": [
+      "6to5ify",
+      "reactify",
+      "envify"
+    ]
+  },
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "alt": "^0.12.0",
+    "animate.css": "^3.1.1",
+    "array.prototype.find": "^1.0.0",
+    "es5-shim": "^4.0.6",
+    "moment": "^2.9.0",
+    "object-assign": "^2.0.0",
+    "react": "^0.12.2",
+    "react-router": "^0.11.6",
+    "shufflerfm": "^0.2.2",
+    "soundcloud-audio": "^0.1.1",
+    "superagent": "^0.21.0"
+  },
+  "devDependencies": {
+    "6to5": "^3.3.4",
+    "6to5ify": "^4.0.0",
+    "browserify": "^8.0.3",
+    "envify": "^3.2.0",
+    "reactify": "^0.17.1",
+    "uglify-js": "^2.4.16",
+    "watchify": "^2.2.1"
+  }
+}
