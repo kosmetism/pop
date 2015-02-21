@@ -2,7 +2,7 @@
   "name": "blogsounds",
   "version": "0.0.0",
   "description": "Top SoundCloud tracks from web blogs by genres.",
-  "main": "js/main.js",
+  "main": "js/app.js",
   "scripts": {
     "start": "watchify . -o build/bundle.js -v -d",
     "build": "NODE_ENV=production browserify . | uglifyjs -cm > build/bundle.min.js"

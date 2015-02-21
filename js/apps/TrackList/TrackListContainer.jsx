@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TrackList from './components/TrackList.jsx';
+import LoadingIndicator from '../../shared/components/LoadingIndicator.jsx';
 import TrackListStore from './stores/TrackListStore';
 import TrackListActions from './actions/TrackListViewActions';
 
@@ -31,6 +32,11 @@ let TracksContainer = React.createClass({
     },
 
     render() {
+        let tracks = this.state.tracks;
+        let content = !tracks.length ?
+            <LoadingIndicator /> :
+            <TrackList tracks={tracks} />;
+
         return (
             <div className="track-list">
                 <header className="top-header">
@@ -38,7 +44,7 @@ let TracksContainer = React.createClass({
                     <h2 className="intro-title">What is popular on blogs?</h2>
                     <p className="intro-text">Listen to the web most published SoundlCloud tracks.</p>
                 </header>
-                {!this.state.tracks.length ? <div>Loading..</div> : <TrackList tracks={this.state.tracks} />}
+                {content}
             </div>
         );
     },

@@ -1,9 +1,7 @@
-'use strict';
-
 import React from 'react';
 import ReactRouter from 'react-router';
 
-import AppContainer from './shared/AppContainer.jsx';
+import AppContainer from './apps/AppContainer.jsx';
 import TrackListContainer from './apps/TrackList/TrackListContainer.jsx';
 import TrackDetailsContainer from './apps/TrackDetails/TrackDetailsContainer.jsx';
 
