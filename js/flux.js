@@ -1,6 +1,6 @@
-import Alt from 'alt';
+import Flummox from 'flummox';
 
-export default class Flux extends Alt {
+export default class Flux extends Flummox {
     constructor() {
         super();
     }

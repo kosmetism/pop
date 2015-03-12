@@ -1,40 +1,43 @@
 {
   "name": "blogsounds",
-  "version": "0.0.0",
-  "description": "Top SoundCloud tracks from web blogs by genres.",
+  "version": "0.1.0",
+  "description": "Top music tracks of the web blogs by genres.",
   "main": "js/app.js",
   "scripts": {
-    "start": "watchify . -o build/bundle.js -v -d",
-    "build": "NODE_ENV=production browserify . | uglifyjs -cm > build/bundle.min.js"
+    "watch-js": "watchify . -o build/bundle.js -v -d",
+    "watch-css": "./node_modules/myth/bin/myth styles/main.css build/styles.css -w",
+    "build-js": "NODE_ENV=production browserify . | uglifyjs -cm > build/bundle.min.js",
+    "build-css": "./node_modules/myth/bin/myth styles/main.css build/styles.min.css -c",
+    "watch": "npm run watch-js & npm run watch-css",
+    "build": "npm run build-js && npm run build-css",
+    "start": "npm run watch"
   },
   "browserify": {
     "transform": [
-      "6to5ify",
-      "reactify",
+      "babelify",
       "envify"
     ]
   },
   "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "alt": "^0.12.0",
     "animate.css": "^3.1.1",
-    "array.prototype.find": "^1.0.0",
+    "babel-runtime": "^4.7.8",
+    "babelify": "^5.0.4",
     "es5-shim": "^4.0.6",
+    "flummox": "^2.13.1",
     "moment": "^2.9.0",
-    "object-assign": "^2.0.0",
     "react": "^0.12.2",
-    "react-router": "^0.11.6",
+    "react-router": "^0.12.4",
     "shufflerfm": "^0.2.2",
     "soundcloud-audio": "^0.1.1",
     "superagent": "^0.21.0"
   },
   "devDependencies": {
-    "6to5": "^3.3.4",
-    "6to5ify": "^4.0.0",
+    "babel": "^4.7.8",
     "browserify": "^8.0.3",
     "envify": "^3.2.0",
-    "reactify": "^0.17.1",
+    "myth": "^1.4.0",
     "uglify-js": "^2.4.16",
     "watchify": "^2.2.1"
   }

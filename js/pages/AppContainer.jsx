@@ -1,13 +1,11 @@
 import React from 'react';
-import ReactRouter from 'react-router';
-
-let RouteHandler = ReactRouter.RouteHandler;
+import { RouteHandler } from 'react-router';
 
 let AppContainer = React.createClass({
     render() {
         return (
-            <div className="container clearfix">
-                <RouteHandler />
+            <div className="container">
+                <RouteHandler {...this.props} />
             </div>
         );
     }

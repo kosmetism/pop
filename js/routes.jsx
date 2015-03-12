@@ -1,12 +1,9 @@
 import React from 'react';
-import ReactRouter from 'react-router';
+import { Route, DefaultRoute } from 'react-router';
 
-import AppContainer from './apps/AppContainer.jsx';
-import TrackListContainer from './apps/TrackList/TrackListContainer.jsx';
-import TrackDetailsContainer from './apps/TrackDetails/TrackDetailsContainer.jsx';
-
-let Route = ReactRouter.Route;
-let DefaultRoute = ReactRouter.DefaultRoute;
+import AppContainer from './pages/AppContainer.jsx';
+import TrackListContainer from './pages/tracks/TrackListContainer.jsx';
+import TrackDetailsContainer from './pages/tracks/TrackDetailsContainer.jsx';
 
 export default (
     <Route name="list" path="/" handler={AppContainer}>

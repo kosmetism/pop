@@ -3,5 +3,5 @@ node_modules
 bower_components
 *.log
 
-build/bundle.js
-build/bundle.min.js
+build/*.js
+build/*.css
